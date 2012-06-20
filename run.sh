@@ -1,0 +1,1 @@
+../jcube run integration ../config.xml 8075 $1
