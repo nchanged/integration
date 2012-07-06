@@ -1,0 +1,84 @@
+<root>
+	<!-- 
+	**** Startup chain filters ***
+	Use develop=true attribute, to use chain only in develop mode.
+	Tomcat will ignore this chain in future
+	
+	-->
+	<chain-filter>
+	     <chain develop="true" name="static">
+	            <class>jcube.core.filter.ServeDevelopStatic</class>
+	            <properties>
+	                    <url-config>/static:{path}/static|/media:{path}/media</url-config>
+	           </properties>
+	    </chain>
+	    
+	    <chain name="ControllerURLAssoc">
+	        <class>jcube.core.filter.ControllerURLAssocFilter</class>
+	    </chain>
+	    
+	    <chain name="velocity-manager">
+	        <class>jcube.core.filter.VelocityTemplateEngine</class>
+	        <properties>
+	            <auto-add-extention>.htm</auto-add-extention>
+	            <input.encoding>UTF-8</input.encoding>
+	            <output.encoding>UTF-8</output.encoding>
+	            <encoding.default>UTF-8</encoding.default>
+	            <template_path>{path}/templates</template_path>
+	        </properties>            
+	    </chain>            
+	
+	    
+	    <chain name="controller-name-dispatch">
+	        <class>jcube.core.filter.ControllerDispatcher</class>
+	        <properties>
+	            <default-controller-name>main</default-controller-name>
+	            <default-method-name>defaults</default-method-name>
+	        </properties>
+	    </chain>
+	    
+	    <!-- ActiveRecord connector -->            
+	   
+	    <chain>
+	        <class>jcube.core.filter.JcubeActiveRecordPConnect</class>
+	    </chain>
+	   
+	    
+	    <!-- Database Session initializer -->
+	           
+	    <chain name="session">
+	        <class>jcube.core.filter.DBSession</class>
+	        <properties>
+	            <auto-start>true</auto-start>
+	        </properties>
+	    </chain>
+	   
+	
+	    <chain name="invoke-controller">
+	        <class>jcube.core.filter.ControllerInvoke</class>
+	        <allow-skip-chains>
+	            <chain-name>html-print</chain-name>
+	            <chain-name>result-controller</chain-name>
+	        </allow-skip-chains>
+	    </chain>
+	    
+	   
+	    <chain name="result-controller">
+	        <class>jcube.core.filter.ControllerResolver</class>
+	    </chain>
+	    
+	    <chain name="404-error">
+	        <class>jcube.core.filter.Resolve404Error</class>
+	    </chain>
+	    
+	    <chain name="500-error">
+	        <class>jcube.core.filter.Resolve500Error</class>
+	    </chain>
+	
+	    <!-- Printing data to page -->
+	    <chain name="html-print">
+	        <class>jcube.core.filter.PagePrint</class>
+	    </chain>
+	    
+	</chain-filter>
+</root>

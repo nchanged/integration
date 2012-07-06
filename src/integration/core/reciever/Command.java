@@ -1,6 +1,8 @@
 package integration.core.reciever;
 import java.util.ArrayList;
 
+import jcube.core.server.Environ;
+
 import flexjson.JSONSerializer;
 import integration.core.converter.PackageConverter;
 import integration.core.exception.InvalidParameters;
@@ -15,6 +17,7 @@ import integration.core.response.Intergation;
 public class Command {
 	
 	Class<?> destination = null;
+	Environ environ;
 	/**
 	 * Instantiates a new command.
 	 *
@@ -22,7 +25,7 @@ public class Command {
 	 * @param option the option
 	 * @throws InvalidParameters the invalid parameters
 	 */
-	public Command(String cmd, String option) throws InvalidParameters
+	public Command(Environ environ, String cmd, String option) throws InvalidParameters
 	{
 		if ( cmd == null )
 			throw new InvalidParameters("You sould specify the command");
@@ -32,14 +35,16 @@ public class Command {
 		if ( (destination = converter.getDestinationClass()) == null )
 			throw new InvalidParameters("Command not found");
 		
-		// Get the process
+		this.environ = environ;
 		
 		
 	}
 	
+	
+
 	protected IntegrationProcess getProcess() throws InvalidParameters
 	{
-		return new IntegrationProcess(destination);
+		return new IntegrationProcess(this.environ, destination);
 	}
 	
 	public ArrayList<Object> getOut() throws InvalidParameters

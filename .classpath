@@ -36,7 +36,6 @@
 	<classpathentry kind="lib" path="/Users/iorlov/java/jcube/lib/jxls-reader-1.0-RC-2.jar"/>
 	<classpathentry kind="lib" path="/Users/iorlov/java/jcube/lib/log4j-1.2.8.jar"/>
 	<classpathentry kind="lib" path="/Users/iorlov/java/jcube/lib/mysql-connector-java-5.1.13-bin.jar"/>
-	<classpathentry kind="lib" path="/Users/iorlov/java/jcube/lib/newjcubehttp.jar"/>
 	<classpathentry kind="lib" path="/Users/iorlov/java/jcube/lib/openid4java-0.9.5.jar"/>
 	<classpathentry kind="lib" path="/Users/iorlov/java/jcube/lib/postgresql-9.0-801.jdbc4.jar"/>
 	<classpathentry kind="lib" path="/Users/iorlov/java/jcube/lib/quickserver-1.4.7.jar"/>
@@ -64,5 +63,6 @@
 	<classpathentry kind="lib" path="/Users/iorlov/java/jcube/lib/xmlrpc.jar"/>
 	<classpathentry kind="lib" path="/Users/iorlov/java/jcube/lib/xmpp-core-0.3.jar"/>
 	<classpathentry kind="lib" path="/Users/iorlov/java/jcube/lib/xmpp-dom4j-0.3.jar"/>
+	<classpathentry kind="lib" path="/Users/iorlov/.jcube/lib/jcube-framework.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

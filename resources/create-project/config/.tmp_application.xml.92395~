@@ -1,0 +1,29 @@
+<root>
+	<!-- 
+	Defines ************************************************
+	Define here global config variables, like path and other 
+	-->
+	<define key="project-package">[[project-package]]</define>
+	<define key="path">..</define>
+	<define key="config-path">{path}/config</define>
+	
+	<!-- Important keyword to detect what project we are in -->
+	<project-name>{project-package}</project-name>
+	
+	<!-- Binary path (for tomcat ) -->
+	<!-- <binary-path>{path}/bin</binary-path> -->
+	
+	<!-- 
+	Bundles. Path to configuration files ******************
+	Define here global config variables, like path and other 
+	-->
+	
+	<bundles>
+		<bundle name="startup">{config-path}/startup.xml</bundle>
+		<bundle name="controller">{config-path}/controller.xml</bundle>
+		<bundle name="filters">{config-path}/filters.xml</bundle>
+		<bundle name="db">{config-path}/db.xml</bundle>
+		<bundle name="beans">{config-path}/beans.xml</bundle>
+	</bundles>
+	
+</root>

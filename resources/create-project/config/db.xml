@@ -1,0 +1,18 @@
+<root>
+	<!--
+	* Activerecord settings
+	-->
+	<activerecord-settings>
+		<log-sql>false</log-sql>
+		<delete-unused-fields>false</delete-unused-fields>
+	</activerecord-settings>
+	
+	<active_record>
+            <engine>sqllite</engine>
+            <user>user</user>
+            <password>pass</password>
+            <host>{path}/db.local</host>
+            <database>{project-package}</database>
+            <package>{project-package}.model</package>
+    </active_record>
+</root>

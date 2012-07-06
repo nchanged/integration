@@ -1,1 +1,1 @@
-../jcube run integration ../config.xml 8075 $1
+../jcube run integration ../config/application.xml 8075 $1

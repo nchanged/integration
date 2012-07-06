@@ -1,6 +1,9 @@
 package integration.core.process;
 
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
+
+import jcube.core.server.Environ;
 
 import integration.core.exception.InvalidParameters;
 import integration.core.response.Chain;
@@ -17,14 +20,21 @@ public class IntegrationProcess {
 	
 	/**
 	 * Instantiates a new integration process.
+	 * @param environ 
 	 *
 	 * @param destination the destination
 	 * @throws InvalidParameters the invalid parameters
 	 */
-	public IntegrationProcess(Class<?> destination) throws InvalidParameters
+	public IntegrationProcess(Environ environ, Class<?> destination) throws InvalidParameters
 	{
 		try {
-			this.integration =  (Intergation) destination.newInstance();
+			Constructor<?> constructor = destination.getConstructor(Environ.class);
+			Object[] constructorArgs =
+			{ environ };
+			
+			this.integration =  (Intergation)  constructor.newInstance(constructorArgs);
+			
+			
 		} catch ( Exception e) {
 			throw new InvalidParameters("Error occured during command");
 		}

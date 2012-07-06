@@ -1,0 +1,197 @@
+
+.pinched {
+	position:absolute;;
+	padding:7px;
+	
+	text-align:center;
+	color:#fff;
+	background:#f82c00; 
+	/* css3 */
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	
+	display:inline-block;
+	-moz-border-radius: 5px;
+	border-radius: 3px;
+	-moz-box-shadow: 3px 3px 3px #333;
+	-webkit-box-shadow: 3px 3px 3px #333;
+	box-shadow: 3px 3px 3px #333;
+	color:white;
+	z-index:1;
+	right:0;
+	top:-15px;
+	
+}
+
+/* creates a rectangle of the colour wanted for the pointy bit */
+.pinched:before {
+
+	 position: absolute;
+  display: block;
+  content: "";  
+  border-color: #f82c00 transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height:0;
+  width:0;
+  position:absolute;
+  bottom:-19px;
+  left:1em;
+	
+	
+}
+
+
+
+.jcube-form {
+	border:1px solid #a4a2a0;
+	width:auto;
+	display:inline-block;
+	padding:5px;
+	position:relative;
+	padding-top:20px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-top:20px;
+}
+
+.jcube-form h5 {
+	margin:0;
+	padding:0;
+	
+	font-family: Arial, sans-serif !important;
+	position:absolute;
+	top:-15px;
+	left:10px;
+	font-size:12px;
+	
+
+
+	
+
+	border:1px solid #a4a2a0;
+	background-color:white;
+	
+	padding:5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	
+	
+}
+
+
+.jcube-form .error {
+	background-color:#ffcbd7 !important;
+	-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+.jcube-form .submit {
+	display:inline-block;
+	
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding:5px;
+	margin-left:10px;
+	border:1px solid #b2afad;
+	color:white;
+	cursor:pointer;
+	padding-left:10px;
+	padding-right:10px;
+	border-top:3px solid #20489d;
+	
+	
+	background-image: linear-gradient(bottom, rgb(57,118,204) 81%, rgb(61,61,204) 15%, rgb(121,155,242) 50%);
+	background-image: -o-linear-gradient(bottom, rgb(57,118,204) 81%, rgb(61,61,204) 15%, rgb(121,155,242) 50%);
+	background-image: -moz-linear-gradient(bottom, rgb(57,118,204) 81%, rgb(61,61,204) 15%, rgb(121,155,242) 50%);
+	background-image: -webkit-linear-gradient(bottom, rgb(57,118,204) 81%, rgb(61,61,204) 15%, rgb(121,155,242) 50%);
+	background-image: -ms-linear-gradient(bottom, rgb(57,118,204) 81%, rgb(61,61,204) 15%, rgb(121,155,242) 50%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.81, rgb(57,118,204)),
+		color-stop(0.15, rgb(61,61,204)),
+		color-stop(0.5, rgb(121,155,242))
+	);
+	
+}
+
+.jcube-form .submit:hover {
+	
+
+}
+
+.jcube-form .item label:first-child {
+	display:block;
+	font-family: Arial, sans-serif !important;
+font-size: 13px;
+font-style: normal;
+font-weight: bold;
+}
+.jcube-form .item {
+ display:inline-block;
+ padding:10px;
+ position:relative;
+ 
+}
+.jcube-form .item input[type='checkbox']
+{
+	width:20px !important;
+	cursor:pointer;
+	
+}
+.jcube-form .item label {
+	padding:0;
+	margin:0;
+	position:relative;
+}
+
+.jcube-form .item input[type='text']
+{
+	background-image: -webkit-gradient(
+		linear,
+	left bottom,
+	
+	
+	left top,
+	color-stop(0.07, rgb(240,240,240)),
+	color-stop(0.92, rgb(242,242,242)),
+	color-stop(0.53, rgb(255,255,255))
+	);
+	border: 1px solid #a2a2a2;
+	height:20px;
+}
+
+.jcube-form .item select, option
+{
+	background-image: -webkit-gradient(
+		linear,
+	left bottom,
+	
+	
+	left top,
+	color-stop(0.07, rgb(240,240,240)),
+	color-stop(0.92, rgb(242,242,242)),
+	color-stop(0.53, rgb(255,255,255))
+	);
+	border: 1px solid #a2a2a2;
+	height:30px;
+	width:200px;
+}
+
+.jcube-form .item.focused {
+	background-color:#dfefff;
+	-moz-border-radius: 10px;
+border-radius: 10px;
+
+}
+
+.jcube-form .item input[type='text']:focus {
+    outline: none;
+}
+
+

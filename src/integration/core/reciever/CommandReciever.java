@@ -2,6 +2,8 @@ package integration.core.reciever;
 
 import java.util.ArrayList;
 
+import jcube.core.server.Environ;
+
 import integration.core.exception.InvalidParameters;
 
 
@@ -11,7 +13,8 @@ import integration.core.exception.InvalidParameters;
  * @author iorlov
  */
 public class CommandReciever {
-	Command command;
+	protected Command command;
+	protected Environ environ;
 	/**
 	 * Instantiates a new command reciever.
 	 *
@@ -19,9 +22,11 @@ public class CommandReciever {
 	 * @param options the options
 	 * @throws InvalidParameters 
 	 */
-	public CommandReciever(String cmd, String options) throws InvalidParameters
+	public CommandReciever(Environ environ, String cmd, String options) throws InvalidParameters
 	{
+		this.environ = environ;
 		command = this.getCommand(cmd, options);	
+		
 	}
 	
 	/**
@@ -38,6 +43,7 @@ public class CommandReciever {
 	
 	public Command getCommand(String command, String option) throws InvalidParameters
 	{
-		return new Command(command, option);
+		
+		return new Command(environ, command, option);
 	}
 }
