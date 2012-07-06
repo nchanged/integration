@@ -1,4 +1,0 @@
-<root>
-	<main-package>{project-package}.controller</main-package>
-	<admin-package>{project-package}.admin.controller</admin-package>
-</root>

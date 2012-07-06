@@ -1,0 +1,13 @@
+.classpath
+.project
+bin/velocity.log
+bin/velocity.log*
+velocity.log*
+velocity.log
+.session/*
+*.session
+*~
+*.swp
+*.swo
+log
+._tmp*
