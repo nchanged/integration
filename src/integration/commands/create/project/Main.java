@@ -59,8 +59,11 @@ public class Main implements Intergation {
 		// startup configuration
 		chains.add( new DownloadTextFile("resources/create-project/config/startup.xml", 
 				"{project-path}/config/") );
+		
 		chains.add( new DownloadTextFile("resources/create-project/bash/run.sh", 
 				"{project-path}/") );
+		// Chmod for executing
+		chains.add( new MakeRunnable("{project-path}/run.sh") );
 		
 		chains.add( new DownloadTextFile("resources/create-project/css/jcube-form.css", 
 				"{project-path}/static/css/") );
