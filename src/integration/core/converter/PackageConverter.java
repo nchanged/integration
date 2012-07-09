@@ -38,7 +38,7 @@ public class PackageConverter {
 	{
 		Class<?> target = null;
 		if ( second == null )
-			target = tryClass(second);
+			target = tryClass(first);
 		else 
 			target = tryClass(first + "." + second);
 		return target;
@@ -52,7 +52,7 @@ public class PackageConverter {
 	 */
 	public Class<?> tryClass(String data)
 	{
-		System.out.println(getClassTargetName(data));
+		
 		try {
 			
 			return Class.forName(getClassTargetName(data));

@@ -1,6 +1,7 @@
 package integration.core.process;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 import jcube.core.server.Environ;
@@ -28,16 +29,25 @@ public class IntegrationProcess {
 	public IntegrationProcess(Environ environ, Class<?> destination) throws InvalidParameters
 	{
 		try {
-			Constructor<?> constructor = destination.getConstructor(Environ.class);
-			Object[] constructorArgs =
-			{ environ };
 			
+			Constructor<?> constructor = destination.getConstructor(Environ.class);
+			Object[] constructorArgs = { environ };
 			this.integration =  (Intergation)  constructor.newInstance(constructorArgs);
 			
 			
-		} catch ( Exception e) {
+			
+		} catch ( java.lang.NoSuchMethodException e) {
+		
+			try {
+				this.integration =  (Intergation)  destination.newInstance();
+			} catch(Exception e2 ){
+				throw new InvalidParameters("Error occured during command");
+			}
+		} 
+		catch ( Exception e1) {
+			
 			throw new InvalidParameters("Error occured during command");
-		}
+		} 
 	}
 	
 	/**

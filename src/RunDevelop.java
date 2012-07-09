@@ -16,9 +16,9 @@ public class RunDevelop   {
     * @throws Exception the exception
     */  
    public static void main(String[] list) throws Exception {
-       Connection connection = new SocketConnection( new Develop(list[1]) );
-       SocketAddress address = new InetSocketAddress(Integer.parseInt(list[0]));
+       Connection connection = new SocketConnection( new Develop("../config/application.xml") );
+       SocketAddress address = new InetSocketAddress(8075);
        connection.connect(address);
-       System.out.println("Jcube develop server started at http://localhost:"+list[0]);
+       System.out.println("Jcube develop server started at http://localhost:"+8075);
    }
 }

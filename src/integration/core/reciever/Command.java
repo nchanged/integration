@@ -66,6 +66,7 @@ public class Command {
 		try {
 			return (Intergation) destination.newInstance();
 		} catch ( Exception e) {
+			
 			throw new InvalidParameters("Error occured during command");
 		}	
 	}
