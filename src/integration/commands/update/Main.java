@@ -14,6 +14,7 @@ public class Main implements Intergation {
 		ArrayList<Chain> chains = new ArrayList<Chain>();
 		
 		chains.add( new UpdateHelper() );
+		chains.add( new Dependency("jcube-framework", "1.0.0") );
 		chains.add( new Dependency("jcube-activerecord", "1.0.0") );
 		chains.add( new Dependency("jcube-helpers", "1.0.0") );
 		chains.add( new Dependency("apache-velocity", "1.6.2") );
