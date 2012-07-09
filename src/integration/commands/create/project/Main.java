@@ -24,24 +24,13 @@ public class Main implements Intergation {
 	public ArrayList<Chain> getChains() {
 		ArrayList<Chain> chains = new ArrayList<Chain>();
 		
-		
-		// Resolving dependencies *********************************************************
-		chains.add( new Dependency("jcube-framework", "1.0.0") );
-		chains.add( new Dependency("jcube-activerecord", "1.0.0") );
-		chains.add( new Dependency("jcube-helpers", "1.0.0") );
-		chains.add( new Dependency("apache-velocity", "1.6.2") );
-		chains.add( new Dependency("commons-codec", "1.4.0") );
-		chains.add( new Dependency("commons-collections", "3.2.1") );
-		chains.add( new Dependency("commons-io", "2.1.0") );
-		chains.add( new Dependency("commons-lang", "2.6.0") );
-		chains.add( new Dependency("flexjson", "2.0.0") );
-		chains.add( new Dependency("simple-http", "4.1.2") );
-		chains.add( new Dependency("mysql-connector-java", "5.1.13") );
-		chains.add( new Dependency("postgresql", "9.0.8") );
-		chains.add( new Dependency("sqlitejdbc", "0.5.6") );
-		
-	
-		
+		// Resolving dependencies 
+		// Grabbing information from update command
+		integration.commands.update.Main updates_integration =
+			new integration.commands.update.Main();
+		for(Chain chain : updates_integration.getChains() )
+			chains.add(chain);
+				
 		// Creating basic java packages ****************************************************
 		chains.add( new CreateDirectory("{project-path}/bin/") );
 		chains.add( new CreateDirectory("{project-path}/src/{project-package}/controller") );
