@@ -22,6 +22,8 @@ public class Main implements Intergation {
 		chains.add( new Dependency("velocity-tools-view", "2.0.0") );
 		chains.add( new Dependency("velocity-tools", "2.0.0") );
 		chains.add( new Dependency("commons-digester", "1.8.0") );
+		chains.add( new Dependency("commons-beanutils", "1.7.0") );
+		
 		
 		chains.add( new Dependency("commons-codec", "1.4.0") );
 		chains.add( new Dependency("commons-collections", "3.2.1") );
