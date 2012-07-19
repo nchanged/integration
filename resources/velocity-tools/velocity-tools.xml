@@ -1,0 +1,13 @@
+<tools>
+	<toolbox scope="application">
+		<tool key="math" class="org.apache.velocity.tools.generic.MathTool"/>
+		<tool key="number" class="org.apache.velocity.tools.generic.NumberTool"/>
+		<tool key="display" class="org.apache.velocity.tools.generic.DisplayTool"/>
+		<tool key="esc" class="org.apache.velocity.tools.generic.EscapeTool"/>
+		<tool class="org.apache.velocity.tools.generic.DateTool" format="yyyy-MM-dd"/>
+	</toolbox>
+	
+	<toolbox scope="request">
+		<tool key="loop" class="org.apache.velocity.tools.generic.LoopTool"/>
+	</toolbox>
+</tools>
