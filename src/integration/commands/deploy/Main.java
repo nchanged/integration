@@ -28,7 +28,7 @@ public class Main implements Intergation {
 		chains.add( new CreateDirectory("{project-path}/WEB-INF/bin") );
 		chains.add( new DownloadTextFile("resources/deploy/web.xml","{project-path}/WEB-INF/") );
 		chains.add(new CopyDirectory("{project-path}/bin", "{project-path}/WEB-INF/bin"));
-		chains.add(new CreateWar("{project-path}/WEB-INF", "{project-path}/{project-name}.war"));
+		chains.add(new CreateWar("{project-path}/WEB-INF", "{project-path}/{project-package}.war"));
 	
 		return chains;
 	}
