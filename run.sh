@@ -18,14 +18,17 @@ case $SYSNAME in
 	"Darwin"|"FreeBSD")
 		cmd_name="md5 -r"
 	;;
-	*) echo  !                   ;;
+
+	*) 
+		echo "LINUX";
+	;;
 esac
 
 run(){
 	echo "running"
 	cd bin
 	filelist=""
-	for file in  `find /Users/iorlov/.jcube/lib/ | grep -i .jar` ; do filelist="$filelist:$file" ; done
+	for file in  `find ../../jcube/lib/ | grep -i .jar` ; do filelist="$filelist:$file" ; done
 	java -classpath $filelist RunDevelop &2>1 &
 	LASTPID=$(($!-1))
 	echo "proccess $LASTPID"

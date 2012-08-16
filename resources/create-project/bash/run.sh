@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 trap ctrl_c KILL HUP INT TERM
-function ctrl_c() {
-        echo "\n\033[31m******\033[0m Trapped CTRL-C"
+ctrl_c() {
+	echo -e "\n\033[31m******\033[0m Trapped CTRL-C"
 	echo "kill proc# ($LASTPID)"
 	kill -9 $LASTPID
 	exit 3
@@ -13,12 +13,16 @@ LASTPID=0
 started=0
 SYSNAME=`uname`
 cmd_name="md5sum"
+locallib="lib"
 
 case $SYSNAME in
 	"Darwin"|"FreeBSD")
 		cmd_name="md5 -r"
 	;;
-	*) echo  !                   ;;
+	
+	*) 
+		echo "LINUX!";
+	;;
 esac
 
 run(){
@@ -26,6 +30,7 @@ run(){
 	cd bin
 	filelist=""
 	for file in  `find [[lib-path]] | grep -i .jar` ; do filelist="$filelist:$file" ; done
+	if [ -d $locallib ]; then for file in  `find ../lib/ | grep -i .jar` ; do filelist="$filelist:$file" ; done; fi;
 	java -classpath $filelist RunDevelop &2>1 &
 	LASTPID=$(($!-1))
 	echo "proccess $LASTPID"
