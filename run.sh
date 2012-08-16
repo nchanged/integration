@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 trap ctrl_c KILL HUP INT TERM
-function ctrl_c() {
-        echo "\n\033[31m******\033[0m Trapped CTRL-C"
+ctrl_c() {
+	echo -e "\n\033[31m******\033[0m Trapped CTRL-C"
 	echo "kill proc# ($LASTPID)"
 	kill -9 $LASTPID
 	exit 3
