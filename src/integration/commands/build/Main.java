@@ -31,7 +31,7 @@ public class Main implements Intergation {
 		chains.add(new CompileSource("{project-path}/src", "{project-path}/.build/WEB-INF/classes"));
 		
 		chains.add( new DownloadTextFile("resources/create-project/config/web.xml","{project-path}/.build/WEB-INF/") );
-		chains.add( new CreateFile("{project-path}/.build/WEB-INF/classes/server.properties ","jcube.config=webapps/{project-package}/config/application.xml") );
+		chains.add( new CreateFile("{project-path}/.build/WEB-INF/classes/server.properties","jcube.config=webapps/{project-package}/config/application.xml") );
 		
 		
 		chains.add( new CopyDirectory("{project-path}/config","{project-path}/.build/") );
