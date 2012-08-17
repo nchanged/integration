@@ -10,7 +10,7 @@ import integration.core.response.Response;
  */
 public class CreateDirectory implements Chain {
 	
-	/** The name. */
+	/** The name. *///
 	protected String name;
 	
 	/**
