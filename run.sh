@@ -27,8 +27,9 @@ esac
 run(){
 	echo "running"
 	cd bin
+	jcubepath="`jcube get-lib-path`"
 	filelist=""
-	for file in  `find ../../jcube/lib/ | grep -i .jar` ; do filelist="$filelist:$file" ; done
+	for file in  `find $jcubepath | grep -i .jar` ; do filelist="$filelist:$file" ; done
 	java -classpath $filelist RunDevelop &2>1 &
 	LASTPID=$(($!-1))
 	echo "proccess $LASTPID"

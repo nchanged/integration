@@ -1,0 +1,3 @@
+config::.build/
+static::.build/
+templates::.build/

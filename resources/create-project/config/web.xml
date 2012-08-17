@@ -21,20 +21,32 @@
    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
    version="2.5"> 
 
+    <!-- ========================================================== --> 
+    <!-- General --> 
+    <!-- ========================================================== --> 
+    
     <description>
-      Servlet [[project-package]] site.
+      Servlet {project-package} site.
     </description>
-    <display-name>[[project-package]]</display-name>
+    <display-name>{project-package}</display-name>
     
     <servlet>
         <servlet-name>JcubeTomcatHandle</servlet-name>
-        <servlet-class>JcubeTomcatHandle</servlet-class>
+        <servlet-class>jcube.core.server.tomcat.servlet.JcubeTomcatServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
     </servlet>
     
     <servlet-mapping>
-        <servlet-name>[[project-package]]</servlet-name>
+        <servlet-name>JcubeTomcatHandle</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
+    
+    <session-config>
+      <session-timeout>30</session-timeout>    <!-- 30 minutes -->
+    </session-config>
     
    
 

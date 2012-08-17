@@ -29,8 +29,9 @@ run(){
 	echo "running"
 	cd bin
 	filelist=""
-	for file in  `find [[lib-path]] | grep -i .jar` ; do filelist="$filelist:$file" ; done
-	if [ -d $locallib ]; then for file in  `find ../lib/ | grep -i .jar` ; do filelist="$filelist:$file" ; done; fi;
+	jcubepath="`jcube get-lib-path`"
+	for file in  `find $jcubepath | grep -i .jar$` ; do filelist="$filelist:$file" ; done
+	if [ -d $locallib ]; then for file in  `find ../lib/ | grep -i .jar$` ; do filelist="$filelist:$file" ; done; fi;
 	java -classpath $filelist RunDevelop &2>1 &
 	LASTPID=$(($!-1))
 	echo "proccess $LASTPID"

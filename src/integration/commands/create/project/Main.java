@@ -62,6 +62,17 @@ public class Main implements Intergation {
 		
 		chains.add( new DownloadTextFile("resources/create-project/bash/run.sh", 
 				"{project-path}/") );
+		
+		// Add files for build
+		chains.add( new DownloadTextFile("resources/create-project/config/jcube-build-path", 
+				"{project-path}/.") );
+		chains.add( new DownloadTextFile("resources/create-project/config/jcube-build-ignore", 
+				"{project-path}/.") );
+		
+		// Add files to ignore git
+		chains.add( new DownloadTextFile("resources/create-project/config/gitignore", 
+				"{project-path}/.") );
+		
 		// Chmod for executing
 		chains.add( new MakeRunnable("{project-path}/run.sh") );
 		

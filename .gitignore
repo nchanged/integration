@@ -11,3 +11,6 @@ velocity.log
 *.swo
 log
 ._tmp*
+.pydevproject
+.settings*
+jcube.py
