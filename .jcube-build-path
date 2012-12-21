@@ -1,0 +1,2 @@
+ {lib-path}::.build/WEB-INF/lib/
+server.properties::.build/WEB-INF/classes/server.properties

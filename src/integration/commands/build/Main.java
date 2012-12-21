@@ -26,15 +26,20 @@ public class Main implements Intergation {
 		
 		chains.add( new ClearSource("{project-path}/.build", "{project-path}/{project-package}.war") );
 		
+		
+		
 		chains.add( new CreateDirectory("{project-path}/.build/WEB-INF/classes") );
 		
 		chains.add(new CompileSource("{project-path}/src", "{project-path}/.build/WEB-INF/classes"));
 		
 		chains.add( new DownloadTextFile("resources/create-project/config/web.xml","{project-path}/.build/WEB-INF/") );
-		chains.add( new CreateFile("{project-path}/.build/WEB-INF/classes/server.properties ","jcube.config=webapps/{project-package}/config/application.xml") );
+		chains.add( new CreateFile("{project-path}/.build/WEB-INF/classes/server.properties ","jcube.config={catalina.base}/{project-package}/config/application.xml") );
 		
 		
 		chains.add( new CopyDirectory("{project-path}/config","{project-path}/.build/") );
+		chains.add( new CopyDirectory(" {lib-path}","{project-path}/.build/WEB-INF/lib/") );
+		
+		
 		chains.add( new CopyDirectory("{project-path}/templates","{project-path}/.build/") );
 		chains.add( new CopyDirectory("{project-path}/static","{project-path}/.build/") );
 		chains.add( new CopyResource());

@@ -12,6 +12,14 @@
 	                    <url-config>/static:{path}/static|/media:{path}/media</url-config>
 	           </properties>
 	    </chain>
+		<!--
+		Production Fix ChainFilter.
+		For instance, you deployed your application into /test/ url.
+		So, jcube will assume /test/ as a root url.
+		-->
+		<chain name="ProductionURLFixer">
+	        <class>jcube.core.deploy.URLFixer</class>
+	    </chain>
 	    
 	    <chain name="ControllerURLAssoc">
 	        <class>jcube.core.filter.ControllerURLAssocFilter</class>

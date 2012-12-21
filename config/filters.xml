@@ -49,9 +49,6 @@
     
     <chain name="404-error">
         <class>jcube.core.filter.Resolve404Error</class>
-        <properties>
-        	<template>404.htm</template>
-        </properties>
     </chain>
     
     <chain name="500-error">
