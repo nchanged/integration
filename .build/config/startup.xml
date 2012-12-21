@@ -1,7 +1,0 @@
- <root>
-	 <!--
-	 <start-up-filter>
-            <class>jcube.core.filter.JcubeActiveRecordInitializer</class>
-     </start-up-filter>
-	 -->
-</root>  
