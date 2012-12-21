@@ -8,6 +8,10 @@
            </properties>
     </chain>
 	
+	<chain name="ProductionURLFixer">
+	        <class>jcube.core.deploy.URLFixer</class>
+	    </chain>
+	
     <chain name="ControllerURLAssoc">
         <class>jcube.core.filter.ControllerURLAssocFilter</class>
     </chain>

@@ -10,10 +10,10 @@
 	<!-- Important keyword to detect what project we are in -->
 	<project-name>{project-package}</project-name>
 	
-	<src-folder>{path}/src</src-folder>
-	
-	<!-- Binary path (for tomcat ) -->
-	<binary-path>./</binary-path>
+	<src-folder>{path}/src/</src-folder>
+
+        <!-- Binary path (for tomcat ) -->
+	<binary-path>{path}/WEB-INF/classes/</binary-path>
 	
 	<!-- 
 	Bundles. Path to configuration files ******************
