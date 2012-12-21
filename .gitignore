@@ -16,3 +16,5 @@ log
 jcube.py
 .build/*
 deploy.sh
+integration.war
+newcookies.txt
